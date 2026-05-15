@@ -92,6 +92,12 @@ i {
 .countCircle {
     background-color: var(--count-bg);
     border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 28px;
 }
 
 .ListItem h5 {
@@ -100,8 +106,10 @@ i {
 }
 
 .count {
-    margin: 10px 15px;
+    margin: 0;
     color: var(--accent-color);
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .sideBarFooter {
@@ -110,8 +118,8 @@ i {
 
 .sideBarFooter div.themeOption {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    align-items: baseline;
+    white-space: nowrap;
 }
 
 .themeCircles {
@@ -146,7 +154,7 @@ i {
 
 .sideBarFooter div {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     margin: 10px 0;
     padding: 13px 10px 5px;
     cursor: pointer;
@@ -182,7 +190,7 @@ i {
     background-color: var(--sidebar-hover);
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     margin-right: 20px;
     height: 35px;
     width: 35px;

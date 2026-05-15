@@ -13,7 +13,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
   origin: "https://to-do-webpage-sa.netlify.app"
 }));
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 // Routes
 app.use('/api/todos', todoRoutes);

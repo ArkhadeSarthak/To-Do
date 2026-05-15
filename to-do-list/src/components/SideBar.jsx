@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import "../styles/components.css";
 
-function SideBar({ todaysTaskCount, upcomingTaskCount, searchQuery, setSearchQuery, setTheme, tasks, allAvailableLists, addUserList, logout }) {
+function SideBar({ todaysTaskCount, upcomingTaskCount, searchQuery, setSearchQuery, setTheme, theme, tasks, allAvailableLists, addUserList, logout }) {
   const navigate = useNavigate();
 
   function handleAddNewList() {
@@ -117,7 +117,7 @@ function SideBar({ todaysTaskCount, upcomingTaskCount, searchQuery, setSearchQue
           <h4 className="PrimaryBlack">Settings</h4>
         </div>
         <div className="themeOption">
-          <i className="fa-solid fa-sun"></i>
+          <i className={theme === "light" ? "fa-solid fa-moon" : "fa-solid fa-sun"}></i>
           <h4 className="PrimaryBlack" style={{marginRight: '15px'}}>Theme</h4>
           <div className="themeCircles">
             <span className="themeCircle light" onClick={() => setTheme('light')} title="Light Theme"></span>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaTrash, FaPen, FaCheckCircle, FaRegCircle, FaCalendarAlt, FaTag, FaAlignLeft } from "react-icons/fa";
 import todoService from "../services/todoService";
+import { useAuth } from "../context/AuthContext";
 import "../styles/stickywall.css";
 
 // Predefined palette for known + dynamic lists
@@ -28,6 +29,7 @@ function getListColor(listName) {
 }
 
 function StickyWall({ closeOpen, iconCLS, setTask, tasks, fetchTasks }) {
+  const { currentUser } = useAuth();
   const [filterList, setFilterList] = useState("All");
 
   // Get all unique lists
@@ -45,7 +47,7 @@ function StickyWall({ closeOpen, iconCLS, setTask, tasks, fetchTasks }) {
 
   async function deleteTask(id) {
     try {
-      await todoService.deleteTodo(id);
+      await todoService.deleteTodo(id, currentUser.email);
       fetchTasks();
     } catch (e) {
       console.error("Failed to delete task", e);
@@ -54,7 +56,7 @@ function StickyWall({ closeOpen, iconCLS, setTask, tasks, fetchTasks }) {
 
   async function toggleCheck(task) {
     try {
-      await todoService.updateTodo(task._id, { Checked: !task.Checked });
+      await todoService.updateTodo(task._id, { ...task, Checked: !task.Checked, userEmail: currentUser.email });
       fetchTasks();
     } catch (e) {
       console.error("Failed to update task", e);

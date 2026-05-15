@@ -10,8 +10,11 @@ const apiClient = axios.create({
   }
 });
 
-const getTodos = async () => {
-  const response = await apiClient.get('/');
+const getTodos = async (email) => {
+  if (!email) return [];
+  const response = await apiClient.get('/', {
+    params: { email }
+  });
   return response.data;
 };
 
@@ -25,8 +28,10 @@ const updateTodo = async (id, todoData) => {
   return response.data;
 };
 
-const deleteTodo = async (id) => {
-  const response = await apiClient.delete(`/${id}`);
+const deleteTodo = async (id, email) => {
+  const response = await apiClient.delete(`/${id}`, {
+    params: { email }
+  });
   return response.data;
 };
 

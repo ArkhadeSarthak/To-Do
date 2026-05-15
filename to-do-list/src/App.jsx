@@ -34,7 +34,7 @@ function AppContent() {
 
   const fetchTasks = async () => {
     try {
-      const data = await todoService.getTodos();
+      const data = await todoService.getTodos(currentUser.email);
       setTasks(data);
     } catch (error) {
       console.error("Failed to fetch tasks", error);
@@ -120,6 +120,7 @@ function AppContent() {
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
               setTheme={setTheme}
+              theme={theme}
               tasks={tasks}
               allAvailableLists={allAvailableLists}
               addUserList={addUserList}

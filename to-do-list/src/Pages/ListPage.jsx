@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaTrash, FaPen, FaCheckCircle, FaRegCircle, FaCalendarAlt, FaTag, FaAlignLeft } from "react-icons/fa";
 import todoService from "../services/todoService";
+import { useAuth } from "../context/AuthContext";
 import "../styles/today.css"; // Reuse Today's styling for consistency
 
 function ListPage({ closeOpen, iconCLS, setTask, tasks, fetchTasks, searchQuery }) {
+  const { currentUser } = useAuth();
   const { listName } = useParams();
 
   async function deleteTask(id) {
     try {
-      await todoService.deleteTodo(id);
+      await todoService.deleteTodo(id, currentUser.email);
       fetchTasks();
     } catch (error) {
       console.error("Failed to delete task", error);
@@ -18,7 +20,7 @@ function ListPage({ closeOpen, iconCLS, setTask, tasks, fetchTasks, searchQuery 
 
   async function checkboxChange(task) {
     try {
-      await todoService.updateTodo(task._id, { Checked: !task.Checked });
+      await todoService.updateTodo(task._id, { ...task, Checked: !task.Checked, userEmail: currentUser.email });
       fetchTasks();
     } catch (error) {
       console.error("Failed to update task", error);

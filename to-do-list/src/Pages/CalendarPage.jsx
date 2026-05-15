@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaTrash, FaCheckCircle, FaRegCircle, FaPen } from "react-icons/fa";
 import todoService from "../services/todoService";
+import { useAuth } from "../context/AuthContext";
 import "../styles/calendar.css";
 
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -10,6 +11,7 @@ const MONTHS = [
 ];
 
 function CalendarPage({ closeOpen, iconCLS, setTask, tasks, fetchTasks }) {
+  const { currentUser } = useAuth();
   const today = new Date();
   const [viewYear, setViewYear] = useState(today.getFullYear());
   const [viewMonth, setViewMonth] = useState(today.getMonth());
@@ -52,7 +54,7 @@ function CalendarPage({ closeOpen, iconCLS, setTask, tasks, fetchTasks }) {
 
   async function deleteTask(id) {
     try {
-      await todoService.deleteTodo(id);
+      await todoService.deleteTodo(id, currentUser.email);
       fetchTasks();
     } catch (e) {
       console.error("Failed to delete task", e);
@@ -61,7 +63,7 @@ function CalendarPage({ closeOpen, iconCLS, setTask, tasks, fetchTasks }) {
 
   async function toggleCheck(task) {
     try {
-      await todoService.updateTodo(task._id, { Checked: !task.Checked });
+      await todoService.updateTodo(task._id, { ...task, Checked: !task.Checked, userEmail: currentUser.email });
       fetchTasks();
     } catch (e) {
       console.error("Failed to update task", e);

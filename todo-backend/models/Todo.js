@@ -18,6 +18,10 @@ const todoSchema = new mongoose.Schema({
   Checked: {
     type: Boolean,
     default: false,
+  },
+  userEmail: {
+    type: String,
+    required: true
   }
 }, {
   timestamps: true

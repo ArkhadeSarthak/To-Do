@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles/components.css";
 import todoService from "../services/todoService";
+import { useAuth } from "../context/AuthContext";
 
 function AddTask({ closeAddTask, allAvailableLists, editingTask }) {
+  const { currentUser } = useAuth();
   const isEditing = !!editingTask;
 
   const [taskTitle, setTaskTitle] = useState("");
@@ -35,6 +37,7 @@ function AddTask({ closeAddTask, allAvailableLists, editingTask }) {
       Date: taskDate,
       List: taskList,
       Description: taskDescription,
+      userEmail: currentUser.email,
     };
 
     if (
