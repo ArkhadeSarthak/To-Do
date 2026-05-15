@@ -1,0 +1,16 @@
+* {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: 0.1s;
+}
+
+.sidebar {
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+/* .appMain {
+  filter: blur(15px);
+} */

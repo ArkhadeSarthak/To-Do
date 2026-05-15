@@ -1,0 +1,161 @@
+* {
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #00315293;
+    border-radius: 40px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0099ff;
+  }
+
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-primary: #213547;
+  --sidebar-bg: #3b3b3b0c;
+  --sidebar-hover: #00000013;
+  --accent-color: #ae00ff;
+  --border-color: #4141413d;
+  --heading-hover: #550000e0;
+  --count-bg: #cccccc;
+  --task-detail-desc: #550000e0;
+  --placeholder: #4100006c;
+  --white: #ffffff;
+  --black: #000000;
+
+  width: 100%;
+  
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Ensure top-level containers inherit theme */
+.container-fluid {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.appMain {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+.theme-dark {
+  --bg-color: #121212;
+  --text-primary: #e0e0e0;
+  --sidebar-bg: #1e1e1e;
+  --sidebar-hover: #2c2c2c;
+  --accent-color: #bb86fc;
+  --border-color: #333333;
+  --heading-hover: #ff7597;
+  --count-bg: #333333;
+  --task-detail-desc: #aaaaaa;
+  --placeholder: #888888;
+  --white: #1e1e1e;
+  --black: #ffffff;
+}
+
+.theme-blue {
+  --bg-color: #e6f2ff;
+  --text-primary: #003366;
+  --sidebar-bg: #cce6ff;
+  --sidebar-hover: #99ccff;
+  --accent-color: #0066cc;
+  --border-color: #99ccff;
+  --heading-hover: #004080;
+  --count-bg: #b3d9ff;
+  --task-detail-desc: #004080;
+  --placeholder: #6699cc;
+  --white: #e6f2ff;
+  --black: #001a33;
+}
+
+h1 {
+  line-height: 1.1;
+}
+
+.btnBlack {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.btnBlack:hover {
+  border-color: #646cff;
+}
+
+.btnBlack:focus,
+.btnBlack:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.btnWhite {
+  color: var(--text-primary);
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 5px;
+  font-size: 1em;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.btnWhite:hover {
+  border-color: #646cff;
+}
+
+.btnWhite:focus,
+.btnWhite:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Remove hardcoded light-mode override so dark/blue themes work */
+.btnWhite {
+  background: transparent;
+}
+
+.PrimaryBlack {
+  color: var(--text-primary);
+}

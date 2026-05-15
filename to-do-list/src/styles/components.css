@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+input, select {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: var(--text-primary);
+    font-weight: 550;
+    font-size: 18px;
+}
+
+input::placeholder {
+    color: var(--placeholder);
+}
+
+i {
+    color: var(--text-primary);
+    opacity: 0.7;
+}
+
+.Heading {
+    color: var(--text-primary);
+    opacity: 0.8;
+}
+
+.Heading:hover {
+    color: var(--heading-hover);
+}
+
+.sidebarMain {
+    background-color: var(--sidebar-bg);
+    padding: 1rem;
+}
+
+.sidebarHeading {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.CloseOpen {
+    position: sticky;
+    left: 10px;
+    display: block;
+}
+
+.search {
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: flex;
+    align-items: baseline;
+}
+
+.search i {
+    width: 15%;
+}
+
+.search input {
+    width: 85%;
+}
+
+.listHead {
+    margin-top: 30px;
+    padding-left: 10px;
+}
+
+.List {
+    margin-top: 0px;
+}
+
+.ListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.ListItem:hover {
+    background-color: var(--sidebar-hover);
+}
+
+.countCircle {
+    background-color: var(--count-bg);
+    border-radius: 50%;
+}
+
+.ListItem h5 {
+    text-align: left;
+    width: 60%;
+}
+
+.count {
+    margin: 10px 15px;
+    color: var(--accent-color);
+}
+
+.sideBarFooter {
+    margin-top: 50px;
+}
+
+.sideBarFooter div.themeOption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.themeCircles {
+    display: flex;
+    gap: 10px;
+}
+
+.themeCircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s;
+}
+
+.themeCircle:hover {
+    transform: scale(1.2);
+}
+
+.themeCircle.light {
+    background-color: #ffffff;
+}
+
+.themeCircle.dark {
+    background-color: #121212;
+}
+
+.themeCircle.blue {
+    background-color: #e6f2ff;
+}
+
+.sideBarFooter div {
+    display: flex;
+    align-items: baseline;
+    margin: 10px 0;
+    padding: 13px 10px 5px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.sideBarFooter div:hover {
+    background-color: var(--sidebar-hover);
+}
+
+.sideBarFooter i {
+    margin-right: 10px;
+}
+
+.todayMain {
+    padding: 20px;
+    height: 100vh;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.todayHeading {
+    position: sticky;
+    top: -20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+}
+
+.todayTaskCount {
+    background-color: var(--sidebar-hover);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 20px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    color: var(--accent-color);
+}
+
+.addTaskToday {
+    display: flex;
+    padding: 30px 0 10px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.addTaskToday i {
+    margin: 0 10px;
+}
+
+.upTodayMain {
+    height: 50vh;
+    overflow: auto;
+}
+
+.upTodayHeading {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0px;
+}
+
+.tomarrowMain,.nextMain {
+    height: 35vh;
+    overflow: auto;
+}
+
+.tomarrowHeading, 
+.nextHeading {
+    margin: 0;
+    padding: 8px 10px;
+    background-color: var(--bg-color);
+    position: sticky;
+    top: 0px;
+}
+
+.addTaskUpcoming {
+    display: flex;
+    padding: 20px 0 10px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.addTaskUpcoming i {
+    margin: 0 10px;
+}
+
+.todayTaskList {
+    padding: 10px;
+}
+
+.todayTaskItem {
+    display: flex;
+    align-items: baseline;
+    padding: 10px 0 5px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.todayTaskItem input {
+    width: 10%;
+}
+
+.todayTaskItem h6 {
+    width: 80%;
+}
+
+.todayTaskItem i {
+    width: 10%;
+}
+
+.btnWhite {
+    border: none
+}
+
+.btnWhite:hover,
+.btnWhite:hover i {
+    border: none;
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+.taskDetail {
+    padding: 20px 10px;
+    padding-right: 30px;
+}
+
+.taskDetailsHead {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.taskName {
+    padding: 10px 0 5px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--heading-hover);
+}
+
+.taskDescName {
+    margin-top: 20px;
+    color: var(--accent-color);
+}
+
+.taskDesc {
+    font-size: 15px;
+    color: var(--task-detail-desc);
+}
+
+.taskDueDate {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    color: var(--accent-color);
+}
+
+.taskDueDate p {
+    color: var(--text-primary);
+}
+
+
+.addTask {
+    justify-self: center;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    background-color: var(--bg-color);
+    padding: 20px;
+    filter: blur(0px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.addTask h2 {
+    margin-bottom: 0;
+    padding: 0;
+    color: var(--text-primary);
+}
+
+.addTask h2:hover {
+    color: var(--heading-hover);
+}
+
+.addTask div {
+    margin: 20px 0;
+}
+
+.addTask h6 {
+    margin: 0;
+    color: var(--accent-color);
+}
+
+.addTask input::placeholder {
+    color: var(--placeholder);
+}
+
+.addTask input, .addTask select {
+    color: var(--text-primary);
+    font-weight: 400;
+    border: 1px solid var(--border-color);
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: var(--bg-color);
+}
+
+.addTask input:hover,
+.addTask input:focus,
+.addTask input:active,
+.addTask input:focus-visible,
+.addTask select:hover,
+.addTask select:focus {
+    box-shadow: 0px 0px 5px 1px var(--accent-color);
+}
+
+.addTaskBtn {
+    text-align: center;
+}
+
+.addTaskBtn button {
+    border: 1px solid var(--border-color);
+    padding: 7px 30px;
+    border-radius: 20px;
+    color: var(--accent-color);
+    background-color: var(--bg-color);
+}
+
+.addTaskBtn button:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.upComingHead {
+    position: sticky;
+    top: 0;
+}

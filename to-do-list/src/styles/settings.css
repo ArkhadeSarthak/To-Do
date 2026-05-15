@@ -1,0 +1,226 @@
+.settingsPage {
+  padding: 20px 28px;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+.settingsHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 30px;
+}
+
+.settingsTitle {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.settingsContent {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Profile Section */
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px;
+  background: var(--sidebar-bg);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.profileImageContainer {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-color);
+}
+
+.profilePlaceholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  border: 3px solid var(--accent-color);
+}
+
+.cameraIcon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--accent-color);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid var(--white);
+  transition: transform 0.2s;
+}
+
+.cameraIcon:hover {
+  transform: scale(1.1);
+}
+
+.profileInfoSummary h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.profileInfoSummary p {
+  margin: 0;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+/* Form Section */
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.inputGroup input {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(174, 0, 255, 0.1);
+}
+
+.inputGroup input:disabled {
+  background: var(--sidebar-bg);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.settingsActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.saveBtn, .editBtn, .cancelBtn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  border: none;
+}
+
+.saveBtn {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.editBtn {
+  background: var(--text-primary);
+  color: var(--bg-color);
+}
+
+.cancelBtn {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.saveBtn:hover, .editBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Stats Section */
+.statsSection {
+  margin-top: 20px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color);
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: linear-gradient(135deg, var(--accent-color), #d000ff);
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(174, 0, 255, 0.2);
+}
+
+.statIcon {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.statText h3 {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.statText p {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 900;
+}

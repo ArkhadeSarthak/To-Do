@@ -1,0 +1,329 @@
+/* ── Today Page ───────────────────────────────────────────── */
+.todayPage {
+  padding: 20px 28px;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.tpHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+.tpTitleGroup {
+  flex: 1;
+}
+
+.tpTitle {
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.tpStats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tpStatChip {
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--count-bg);
+  color: var(--text-primary);
+}
+
+.tpStatChip.done    { background: #d8f3dc; color: #2d6a4f; }
+.tpStatChip.pending { background: #ffd6e0; color: #c9184a; }
+
+.tpAddBtn {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+.tpAddBtn:hover { opacity: 0.85; }
+
+/* ── Body (list + detail) ─────────────────────────────────── */
+.tpBody {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Task List Column ─────────────────────────────────────── */
+.tpListCol {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 6px;
+  padding-bottom: 20px;
+}
+
+/* ── Task Card ────────────────────────────────────────────── */
+.tpCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: var(--bg-color);
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.15s, border-color 0.2s;
+  animation: tpFadeIn 0.2s ease;
+}
+
+@keyframes tpFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tpCard:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
+}
+
+.tpCardActive {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.tpCardDone { opacity: 0.55; }
+
+.tpCheckBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: transform 0.15s;
+}
+.tpCheckBtn:hover { transform: scale(1.15); }
+
+.tpCardContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.tpCardTitle {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tpCardTitleDone {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.tpCardMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.tpBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.tpDate {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  opacity: 0.65;
+}
+
+.tpCardDesc {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  opacity: 0.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tpCardActions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.tpActionBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: background 0.15s, transform 0.15s;
+}
+.tpActionBtn:hover { background: var(--sidebar-hover); transform: scale(1.15); }
+
+/* ── Empty State ──────────────────────────────────────────── */
+.tpEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 60px 0;
+  color: var(--text-primary);
+  opacity: 0.45;
+}
+.tpEmpty i { font-size: 2.5rem; color: var(--accent-color); }
+.tpEmpty p { margin: 0; font-size: 1rem; }
+
+/* ── Detail Panel ─────────────────────────────────────────── */
+.tpDetailPanel {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  background: var(--sidebar-bg);
+  border-radius: 16px;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.tpDetailPanelOpen {
+  width: 300px;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.tpDetailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.tpDetailTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.tpDetailClose {
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: var(--text-primary);
+}
+
+.tpDetailName {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.tpDetailRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.tpDetailLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  min-width: 80px;
+}
+
+.tpDetailValue {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tpDetailDesc {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  opacity: 0.7;
+  margin: 4px 0 20px;
+  line-height: 1.5;
+}
+
+.tpDetailActions {
+  margin-top: 10px;
+}
+
+.tpDetailEditBtn {
+  width: 100%;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+.tpDetailEditBtn:hover { opacity: 0.85; }
+
+.tpDetailEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 40px 10px;
+  opacity: 0.4;
+  color: var(--text-primary);
+  text-align: center;
+}
+.tpDetailEmpty i { font-size: 2rem; color: var(--accent-color); }
+.tpDetailEmpty p { margin: 0; font-size: 0.85rem; }
